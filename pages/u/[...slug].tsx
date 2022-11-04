@@ -31,11 +31,11 @@ export default function Page({ data, ...restProps }: Props) {
   let staticMarkup = data ? data.staticMarkup : null;
   let regenerationTimestamp = data ? data.regenerationTimestamp : null;
   const router = useRouter();
-  console.log({ router });
+  // console.log({ router });
 
   let byChapters: Element[] = [];
   let changed = true;
-  console.log(changed);
+  // console.log(changed);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [hasBeenCached, setHasBeenCached] = useState(false);
   // const sections = data.map(chapter => {
@@ -140,7 +140,7 @@ export default function Page({ data, ...restProps }: Props) {
               let url = `${window.location.href}?download=true`;
               let response = await fetch(url);
               let data = await response.text();
-              console.log({ response });
+              // console.log({ response });
             }}
           >
             Hey service Worker! Plz cache me for offline use!
@@ -247,7 +247,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       });
       // const staticMarkup = toReact.map(renderToStaticMarkup(toReact));
       const staticMarkup = chapArray.map((chunk) => {
-        console.log(chunk);
+        // console.log(chunk);
         return chunk;
         // return renderToStaticMarkup(chunk);
       });
