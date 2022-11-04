@@ -1,6 +1,16 @@
-import styles from '../styles/Home.module.css'
+import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 export default function Home() {
+  function clearAllSwCaches() {
+    caches.keys().then((keyList) =>
+      Promise.all(
+        keyList.map((key) => {
+          return caches.delete(key);
+        })
+      )
+    );
+  }
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -9,9 +19,20 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          GO TO U:
+          <Link href="/u">
+            <a>U page</a>
+          </Link>
         </p>
+
+        <div className="p-8">
+          <button
+            onClick={(e) => clearAllSwCaches()}
+            className="bg-red-800 p-4 text-white"
+          >
+            Clear all SW caches
+          </button>
+        </div>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
@@ -52,10 +73,10 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
     </div>
-  )
+  );
 }

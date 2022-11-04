@@ -1,16 +1,23 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
+:root {
+  --color-text: 215, 100%, 10%;
+  --color-base: 0, 0%, 100%;
+  --color-gray: 220, 13%, 95.5%;
+  --color-black: 0, 0%, 0%;
+  --color-primary: 215, 99%, 43%;
 }
-
-* {
-  box-sizing: border-box;
+.chaptermarker {
+  margin-inline-end: 8px;
+}
+.poetry-1 {
+  margin-inline-start: 1rem;
+}
+.poetry-2 {
+  margin-inline-start: 1.75rem;
+}
+.footnote-alternate-translation {
+  font-style: italic;
 }
